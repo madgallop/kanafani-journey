@@ -237,13 +237,14 @@ config.chapters.forEach((record, idx) => {
         // image1.style.marginLeft = "5px"; // Add margin between images
 
         chapter.appendChild(image1);
+    }
 
+    if (record.marker1) {
         var marker1 = document.createElement('img');
         marker1.src = "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/marwan_icon-02.svg";
         marker1.style.width = '20px'; // Set the width of the custom marker
         marker1.style.height = '20px'; // Set the height of the custom marker
         chapter.appendChild(marker1);
-
     }
 
     if (record.image2) {
@@ -253,13 +254,16 @@ config.chapters.forEach((record, idx) => {
         image2.style.objectFit = "cover"; // Maintain the aspect ratio while covering the container
         // image2.style.marginRight = "5px"; // Add margin between images
         chapter.appendChild(image2);
-
+        
+    }
+    if (record.marker2) {
         var marker2 = document.createElement('img');
         marker2.src = "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg";
         marker2.style.width = '20px'; // Set the width of the custom marker
         marker2.style.height = '20px'; // Set the height of the custom marker
         chapter.appendChild(marker2);
     }
+
 
     if (record.image3) {
         var image3 = new Image();
@@ -269,15 +273,14 @@ config.chapters.forEach((record, idx) => {
         // image3.style.marginRight = "5px"; // Add margin between images
         chapter.appendChild(image3);
 
+    }
+
+    if (record.marker3) {
         var marker3 = document.createElement('img');
         marker3.src = "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg";
         marker3.style.width = '20px'; // Set the width of the custom marker
         marker3.style.height = '20px'; // Set the height of the custom marker
         chapter.appendChild(marker3);
-    }
-
-    if (record.marker3) {
-        
     }
 
     if (record.description) {
