@@ -231,28 +231,53 @@ config.chapters.forEach((record, idx) => {
     if (record.image1) {
         var image1 = new Image();
         image1.src = record.image1;
-        image1.style.width = "32%"; // Set the width of each image to 50% (adjust as needed)
+        image1.style.width = "31.5%"; // Set the width of each image to 50% (adjust as needed)
         image1.style.objectFit = "cover"; // Maintain the aspect ratio while covering the container
-        image1.style.marginRight = "10px"; // Add margin between images
+        // image1.style.marginRight = "5px"; // Add margin between images
+        // image1.style.marginLeft = "5px"; // Add margin between images
+
         chapter.appendChild(image1);
+
+        var marker1 = document.createElement('img');
+        marker1.src = "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/marwan_icon-02.svg";
+        marker1.style.width = '20px'; // Set the width of the custom marker
+        marker1.style.height = '20px'; // Set the height of the custom marker
+        chapter.appendChild(marker1);
+
     }
 
     if (record.image2) {
         var image2 = new Image();
         image2.src = record.image2;
-        image2.style.width = "32%"; // Set the width of each image to 50% (adjust as needed)
+        image2.style.width = "31.5%"; // Set the width of each image to 50% (adjust as needed)
         image2.style.objectFit = "cover"; // Maintain the aspect ratio while covering the container
-        image2.style.marginRight = "10px"; // Add margin between images
+        // image2.style.marginRight = "5px"; // Add margin between images
         chapter.appendChild(image2);
+
+        var marker2 = document.createElement('img');
+        marker2.src = "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg";
+        marker2.style.width = '20px'; // Set the width of the custom marker
+        marker2.style.height = '20px'; // Set the height of the custom marker
+        chapter.appendChild(marker2);
     }
 
     if (record.image3) {
         var image3 = new Image();
         image3.src = record.image3;
-        image3.style.width = "32%"; // Set the width of each image to 50% (adjust as needed)
+        image3.style.width = "31.5%"; // Set the width of each image to 50% (adjust as needed)
         image3.style.objectFit = "cover"; // Maintain the aspect ratio while covering the container
-        image3.style.marginRight = "10px"; // Add margin between images
+        // image3.style.marginRight = "5px"; // Add margin between images
         chapter.appendChild(image3);
+
+        var marker3 = document.createElement('img');
+        marker3.src = "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg";
+        marker3.style.width = '20px'; // Set the width of the custom marker
+        marker3.style.height = '20px'; // Set the height of the custom marker
+        chapter.appendChild(marker3);
+    }
+
+    if (record.marker3) {
+        
     }
 
     if (record.description) {
@@ -263,8 +288,8 @@ config.chapters.forEach((record, idx) => {
 
     if (record.description1) {
         var story1 = document.createElement('p');
-        story1.style.width = '32%'; // Set the width for each description
-        story1.style.marginRight = "10px"; // Add margin between paragraphs
+        story1.style.width = '31.5%'; // Set the width for each description
+        story1.style.marginRight = "23px"; // Add margin between paragraphs
         story1.style.display = "inline-block"; // Set display property
         story1.innerHTML = record.description1;
         chapter.appendChild(story1);
@@ -272,8 +297,8 @@ config.chapters.forEach((record, idx) => {
 
     if (record.description2) {
         var story2 = document.createElement('p');
-        story2.style.width = '32%';
-        story2.style.marginRight = "10px";
+        story2.style.width = '31.5%';
+        story2.style.marginRight = "23px";
         story2.style.display = "inline-block";
         story2.innerHTML = record.description2;
         chapter.appendChild(story2);
@@ -281,12 +306,14 @@ config.chapters.forEach((record, idx) => {
 
     if (record.description3) {
         var story3 = document.createElement('p');
-        story3.style.width = '32%';
-        story3.style.marginRight = "10px";
+        story3.style.width = '31.5%';
+        story3.style.marginRight = "23px";
         story3.style.display = "inline-block";
         story3.innerHTML = record.description3;
         chapter.appendChild(story3);
     }
+
+    
 
 
     container.setAttribute('id', record.id);
