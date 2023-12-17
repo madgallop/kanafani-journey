@@ -1,7 +1,7 @@
 var config = {
     style: 'mapbox://styles/madgallop/clq8xzd5t001u01obgze9fdz2',
     accessToken: 'pk.eyJ1IjoibWFkZ2FsbG9wIiwiYSI6ImNsbmhzYzVnajE4eWsybm51bG43bjhuZWUifQ.PAvoy0phwrKGWDEBf75VSA',
-    showMarkers: true,
+    showMarkers: false,
     markerColor: '#3FB1CE',
     //projection: 'equirectangular',
     //Read more about available projections here
@@ -23,8 +23,8 @@ var config = {
             image: 'https://i0.wp.com/arablit.org/wp-content/uploads/2023/04/Untitled-design-174.png?w=1024&ssl=1',
             description: 'Three Palestinian men take journeys hoping to reach Kuwait....',
             location: {
-                center: [43.42283, 32.94538],
-                zoom: 4,
+                center: [40.24918, 31.47661],
+                zoom: 5.68,
                 pitch: 0,
                 bearing: 0
             },
@@ -61,8 +61,8 @@ var config = {
             description3: 'Abu Qais',
             // description: 'These men are....',
             location: {
-                center: [43.42283, 32.94538],
-                zoom: 4,
+                center: [40.24918, 31.47661],
+                zoom: 5.68,
                 pitch: 0,
                 bearing: 0
                 // flyTo additional controls-
@@ -79,17 +79,14 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'third-identifier',
+            id: 'chapter-3',
             alignment: 'left',
             hidden: false,
             // title: 'Third Title',
-            image1: 'https://i0.wp.com/arablit.org/wp-content/uploads/2023/04/Untitled-design-174.png?w=1024&ssl=1',
-            image2: 'https://i0.wp.com/arablit.org/wp-content/uploads/2023/04/Untitled-design-174.png?w=1024&ssl=1',
-            image2: 'https://i0.wp.com/arablit.org/wp-content/uploads/2023/04/Untitled-design-174.png?w=1024&ssl=1',
-            description: 'These men are...',
+            description: 'Scroll or select a location below to trace the journeys of Marwan, Assad, and Abul Qais.',
             location: {
-                center: [43.42283, 32.94538],
-                zoom: 4,
+                center: [40.24918, 31.47661],
+                zoom: 5.68,
                 pitch: 0,
                 bearing: 0
             },
@@ -100,15 +97,15 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'fourth-chapter',
-            alignment: 'full',
+            id: 'chapter-4',
+            alignment: 'left',
             hidden: false,
             title: 'Third Title',
             image: './path/to/image/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
-                center: [43.42283, 32.94538],
-                zoom: 4,
+                center: [34.92452, 31.54914],
+                zoom: 6.78,
                 pitch: 0,
                 bearing: 0
             },
