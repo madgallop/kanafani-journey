@@ -49,11 +49,16 @@
             width: 100%;
             position: relative;
             z-index: 5;
+            background-color: #F8F6F2;
         }
         #header h1, #header h2, #header p {
             margin: 0;
             padding: 2vh 2vw;
             text-align: center;
+            background-color: #F8F6F2;
+            color: rgb(119, 118, 118);
+
+
         }
         #footer {
             width: 100%;
@@ -67,8 +72,8 @@
             z-index: 5;
         }
         #features {
-            padding-top: 10vh;
-            padding-bottom: 10vh;
+            padding-top: 0vh;
+            padding-bottom: 0vh;
         }
         .hidden {
             visibility: hidden;
@@ -94,13 +99,15 @@
             background-color: #fafafa;
         }
         .dark {
-            color: #fafafa;
-            background-color: #444;
+            color: #F8F6F2;
+            background-color: rgb(119, 118, 118);
         }
         .step {
-            padding-bottom: 50vh;
+            padding-bottom: 0vh;
             /* margin-bottom: 10vh; */
             opacity: 0.25;
+            transition: opacity 1s ease; /* Adjust the transition duration as needed */
+            background-color: #F8F6F2;
         }
         .step.active {
             opacity: 0.9;
@@ -221,11 +228,66 @@ config.chapters.forEach((record, idx) => {
         chapter.appendChild(image);
     }
 
+    if (record.image1) {
+        var image1 = new Image();
+        image1.src = record.image1;
+        image1.style.width = "32%"; // Set the width of each image to 50% (adjust as needed)
+        image1.style.objectFit = "cover"; // Maintain the aspect ratio while covering the container
+        image1.style.marginRight = "10px"; // Add margin between images
+        chapter.appendChild(image1);
+    }
+
+    if (record.image2) {
+        var image2 = new Image();
+        image2.src = record.image2;
+        image2.style.width = "32%"; // Set the width of each image to 50% (adjust as needed)
+        image2.style.objectFit = "cover"; // Maintain the aspect ratio while covering the container
+        image2.style.marginRight = "10px"; // Add margin between images
+        chapter.appendChild(image2);
+    }
+
+    if (record.image3) {
+        var image3 = new Image();
+        image3.src = record.image3;
+        image3.style.width = "32%"; // Set the width of each image to 50% (adjust as needed)
+        image3.style.objectFit = "cover"; // Maintain the aspect ratio while covering the container
+        image3.style.marginRight = "10px"; // Add margin between images
+        chapter.appendChild(image3);
+    }
+
     if (record.description) {
         var story = document.createElement('p');
         story.innerHTML = record.description;
         chapter.appendChild(story);
     }
+
+    if (record.description1) {
+        var story1 = document.createElement('p');
+        story1.style.width = '32%'; // Set the width for each description
+        story1.style.marginRight = "10px"; // Add margin between paragraphs
+        story1.style.display = "inline-block"; // Set display property
+        story1.innerHTML = record.description1;
+        chapter.appendChild(story1);
+    }
+
+    if (record.description2) {
+        var story2 = document.createElement('p');
+        story2.style.width = '32%';
+        story2.style.marginRight = "10px";
+        story2.style.display = "inline-block";
+        story2.innerHTML = record.description2;
+        chapter.appendChild(story2);
+    }
+
+    if (record.description3) {
+        var story3 = document.createElement('p');
+        story3.style.width = '32%';
+        story3.style.marginRight = "10px";
+        story3.style.display = "inline-block";
+        story3.innerHTML = record.description3;
+        chapter.appendChild(story3);
+    }
+
 
     container.setAttribute('id', record.id);
     container.classList.add('step');
