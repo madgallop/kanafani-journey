@@ -26,8 +26,8 @@ var config = {
                 center: [40.24918, 31.47661],
                 zoom: 5.68,
                 pitch: 0,
-                bearing: 0
-            },
+                bearing: 0,
+                },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
@@ -90,6 +90,12 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
+        // routes: [{
+            origin: [34.74945, 32.05105], //jaffa
+            destination: [35.95641, 31.94811],
+            color: "#D99E3D",
+            icon: "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/marwan_icon-02.svg",
+            // },]
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
@@ -101,7 +107,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Third Title',
-            image: './path/to/image/source.png',
+            // image: './path/to/image/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [34.92452, 31.54914],
@@ -109,6 +115,11 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
+            origin: [34.74845, 32.05105], //jaffa
+            destination: [35.95541, 31.94811],
+            color: "#D99E3D",
+            icon: "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+            
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',

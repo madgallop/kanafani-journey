@@ -9,6 +9,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
     <style>
         body {
             margin:0;
@@ -402,7 +403,78 @@ if (config.showMarkers) {
 var scroller = scrollama();
 
 
+
+function createRoute(origin, destination) {
+  // Define a GeoJSON Feature object with a LineString geometry
+  const route = {
+    type: 'Feature',
+    geometry: {
+      type: 'LineString',
+      coordinates: [origin, destination],
+    },
+  };
+  // Return the GeoJSON Feature
+  return route;
+}
+
+
+function createPoint(origin, icon) {
+    const point ={
+        type: 'Feature',
+        // properties: { icon },
+        geometry: {
+          type: 'Point',
+          coordinates: origin,
+        },
+    };
+    return point
+}
+
+
+
+function animateRoute(route, point, color, icon) {
+  let counter = 0;
+  const lineDistance = turf.length(route);
+  const steps = 500;
+  const arc = [];
+
+  for (let i = 0; i < lineDistance; i += lineDistance / steps) {
+    const segment = turf.along(route, i);
+    arc.push(segment.geometry.coordinates);
+  }
+
+  route.geometry.coordinates = arc;
+
+  function animate() {
+    const start = route.geometry.coordinates[counter >= steps ? counter - 1 : counter];
+    const end = route.geometry.coordinates[counter >= steps ? counter : counter + 1];
+
+    if (!start || !end) {
+      return;
+    }
+
+    point.geometry.coordinates = route.geometry.coordinates[counter];
+
+    // point.properties.bearing = turf.bearing(turf.point(start), turf.point(end));
+
+    map.getSource('point-source').setData(point);
+
+    if (counter < steps) {
+      requestAnimationFrame(animate);
+    }
+
+    counter = counter + 1;
+  }
+
+  animate();
+}
+
+
+
+
+
 map.on("load", function() {
+
     if (config.use3dTerrain) {
         map.addSource('mapbox-dem', {
             'type': 'raster-dem',
@@ -439,6 +511,68 @@ map.on("load", function() {
     .onStepEnter(async response => {
         var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
         var chapter = config.chapters[current_chapter];
+
+        // for route in routes: 
+        // const route = createRoute(chapter.route.origin, chapter.route.destination);
+        // const point = createPoint(chapter.route.origin, chapter.route.icon);
+
+        if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2") {
+            const route = createRoute(chapter.origin, chapter.destination);
+            const point = createPoint(chapter.origin, chapter.icon);
+
+            if (route && point) {
+                // Add or update source and layer for route
+                if (!map.getSource('route-source')) {
+                    map.addSource('route-source', {
+                        type: 'geojson',
+                        data: route,
+                    });
+                    map.addLayer({
+                        id: 'route-layer',
+                        type: 'line',
+                        source: 'route-source',
+                        paint: {
+                            'line-color': '#007cbf',
+                            'line-width': 2,
+                        },
+                    });
+                } else {
+                    map.getSource('route-source').setData(route);
+                }
+
+                // Add or update source and layer for point
+                if (!map.getSource('point-source')) {
+                    map.addSource('point-source', {
+                        type: 'geojson',
+                        data: point,
+                    });
+                    map.addLayer({
+                    id: 'point-layer',
+                    type: 'symbol',
+                    source: 'point-source',
+                    layout: {
+                        'icon-image': "marwan_icon-02",
+                        'icon-size': 1.5,
+                        // 'icon-rotate': ['get', 'bearing'],
+                        // 'icon-rotation-alignment': 'map',
+                        'icon-allow-overlap': true,
+                        'icon-ignore-placement': true,
+                    },
+                });
+            } else {
+                map.getSource('point-source').setData(point);
+            }
+
+            // Update paint properties for the route layer
+            map.setPaintProperty('route-layer', 'line-color', chapter.color);
+
+            // Update icon properties for the point layer
+            // map.setLayoutProperty('point-layer', 'icon-image', chapter.icon);
+
+            animateRoute(map.getSource('route-source')._data, map.getSource('point-source')._data, chapter.color, chapter.icon);
+        }
+    }
+        
         
         response.element.classList.add('active');
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
@@ -446,6 +580,9 @@ map.on("load", function() {
         // Incase you do not want to have a dynamic inset map,
         // rather want to keep it a static view but still change the
         // bbox as main map move: comment out the below if section.
+
+
+
         if (config.inset) {
           if (chapter.location.zoom < 5) {
             insetMap.flyTo({center: chapter.location.center, zoom: 0});
