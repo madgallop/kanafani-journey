@@ -385,65 +385,101 @@ function createPoint(origin, icon) {
     };
     return point
 }
+function animateRoute(route, point, color, icon, wayID) {
+  return new Promise(resolve => {
+    let counter = 0;
+    const lineDistance = turf.length(route);
+    const steps = 150;
+    const arc = [];
 
-function animateRoute(route, point, color, icon) {
-  let counter = 0;
-  const lineDistance = turf.length(route);
-  const steps = 150;
-  const arc = [];
+    for (let i = 0; i < lineDistance; i += lineDistance / steps) {
+      const segment = turf.along(route, i);
+      arc.push(segment.geometry.coordinates);
+    }
 
-  for (let i = 0; i < lineDistance; i += lineDistance / steps) {
-    const segment = turf.along(route, i);
-    arc.push(segment.geometry.coordinates);
-  }
+    function animate() {
+      if (counter < steps) {
+        const currentCoordinates = arc.slice(0, counter + 1);
 
-  function animate() {
-    if (counter < steps) {
-      const currentCoordinates = arc.slice(0, counter + 1);
-
-      // Draw the line segment from the start to the current position of the point
-      const lineSegment = {
-        type: 'Feature',
-        geometry: {
-          type: 'LineString',
-          coordinates: currentCoordinates,
-        },
-      };
+        // Draw the line segment from the start to the current position of the point
+        const lineSegment = {
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: currentCoordinates,
+          },
+        };
 
       // Add or update source and layer for the route segment
-      if (!map.getSource('route-segment-source')) {
-        map.addSource('route-segment-source', {
+      const routeSourceId = `${wayID}-route-segment-source`;
+      const routeLayerId = `${wayID}-route-segment-layer`;
+
+      if (!map.getSource(routeSourceId)) {
+        map.addSource(routeSourceId, {
           type: 'geojson',
           data: lineSegment,
         });
         map.addLayer({
-          id: 'route-segment-layer',
+          id: routeLayerId,
           type: 'line',
-          source: 'route-segment-source',
+          source: routeSourceId,
           paint: {
             'line-color': color,
             'line-width': 2,
           },
         });
       } else {
-        map.getSource('route-segment-source').setData(lineSegment);
+        map.getSource(routeSourceId).setData(lineSegment);
       }
 
       // Move the point to update the icon position
       point.geometry.coordinates = currentCoordinates[currentCoordinates.length - 1];
-      map.getSource('point-source').setData(point);
+
+      // Add or update source and layer for the point
+      const pointSourceId = `${wayID}-point-source`;
+      const pointLayerId = `${wayID}-point-layer`;
+
+      if (!map.getSource(pointSourceId)) {
+        map.addSource(pointSourceId, {
+          type: 'geojson',
+          data: point,
+        });
+        map.addLayer({
+          id: pointLayerId,
+          type: 'symbol',
+          source: pointSourceId,
+          layout: {
+            'icon-image': icon,
+            'icon-size': 1.5,
+            'icon-allow-overlap': true,
+            'icon-ignore-placement': true,
+          },
+          paint: {
+            'icon-color': color,
+          },
+        });
+      } else {
+        map.getSource(pointSourceId).setData(point);
+      }
 
       counter = counter + 1;
 
       requestAnimationFrame(animate);
+    }else {
+        // Animation is complete, resolve the Promise
+        resolve();
+      }
     }
-  }
 
-  animate();
+    animate();
+  });
 }
 
 
 
+
+let prevPointSourceNames = [];
+let prevPointLayerNames = [];
 
 map.on("load", function() {
 
@@ -459,65 +495,87 @@ map.on("load", function() {
         var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
         var chapter = config.chapters[current_chapter];
 
-        if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2" && chapter.id !== "chapter-3") {
-            for (const way of chapter.routes) {
+        if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2" && chapter.id !== "chapter-3"&& chapter.id !== "chapter-4") {
+            console.log(prevPointLayerNames)
+            prevPointLayerNames.forEach(name => map.removeLayer(name));
+            prevPointSourceNames.forEach(name => map.removeSource(name));
 
+
+            // Clear the arrays
+            prevPointLayerNames = [];
+            prevPointSourceNames = [];
+            const animations = [];
+
+            
+
+            for (const way of chapter.routes) {
                 const route = createRoute(way.origin, way.destination);
                 const point = createPoint(way.origin, way.icon);
 
                 if (route && point) {
+
                     // Add or update source and layer for route
-                    if (!map.getSource('route-source')) {
-                        map.addSource('route-source', {
+                    const routeSourceName = `route-source-${way.id}`;
+                    const routeLayerName = `route-layer-${way.id}`;
+
+                    if (!map.getSource(routeSourceName)) {
+                        map.addSource(routeSourceName, {
                             type: 'geojson',
                             data: route,
                         });
                         // map.addLayer({
-                        //     id: 'route-layer',
+                        //     id: routeLayerName,
                         //     type: 'line',
-                        //     source: 'route-source',
+                        //     source: routeSourceName,
                         //     paint: {
                         //         'line-color': way.color,
                         //         'line-width': 2,
                         //     },
                         // });
                     } else {
-                        map.getSource('route-source').setData(route);
+                        map.getSource(routeSourceName).setData(route);
                     }
 
                     // Add or update source and layer for point
-                    if (!map.getSource('point-source')) {
-                        map.addSource('point-source', {
+                    var pointSourceName = `point-source-${way.id}`;
+                    var pointLayerName = `point-layer-${way.id}`;
+
+                    if (!map.getSource(pointSourceName)) {
+                        map.addSource(pointSourceName, {
                             type: 'geojson',
                             data: point,
                         });
                         map.addLayer({
-                        id: 'point-layer',
-                        type: 'symbol',
-                        source: 'point-source',
-                        layout: {
-                            'icon-image': way.icon,
-                            'icon-size': 1.5,
-                            // 'icon-rotate': ['get', 'bearing'],
-                            // 'icon-rotation-alignment': 'map',
-                            'icon-allow-overlap': true,
-                            'icon-ignore-placement': true,
-                        },
-                        paint: {
-                            'icon-color': way.color, // Set the color here
-                        },
-                    });
-                } else {
-                    map.getSource('point-source').setData(point);
+                            id: pointLayerName,
+                            type: 'symbol',
+                            source: pointSourceName,
+                            layout: {
+                                'icon-image': way.icon,
+                                'icon-size': 1.5,
+                                'icon-allow-overlap': true,
+                                'icon-ignore-placement': true,
+                            },
+                            paint: {
+                                'icon-color': way.color,
+                            },
+                        });
+                    } else {
+                        map.getSource(pointSourceName).setData(point);
+                    }
+
+                    // animateRoute(map.getSource(routeSourceName)._data, map.getSource(pointSourceName)._data, way.color, way.icon, chapter.id);  
+                    const animationPromise = animateRoute(route, point, way.color, way.icon, way.id);
+                        animations.push(animationPromise);
+                    }
+                    }
+
+                    // Wait for all animations to complete before moving to the next step
+                    await Promise.all(animations);
+                    
+                    prevPointSourceNames.push(pointSourceName);
+                    prevPointLayerNames.push(pointLayerName);
                 }
 
-                // Update paint properties for the route layer
-                // map.setPaintProperty('route-layer', 'line-color', way.color);
-
-                animateRoute(map.getSource('route-source')._data, map.getSource('point-source')._data, way.color, way.icon);
-            }
-        }
-    }
         
         
         response.element.classList.add('active');
