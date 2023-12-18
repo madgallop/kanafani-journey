@@ -112,6 +112,12 @@ var config = {
                 bearing: 0
             },
             routes: [
+                {origin: [35.28463, 32.71906], //nazareth
+                destination: [35.28463, 32.71906],
+                color: "#3D8DD9",
+                icon: "qais_icon-04",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "Q1",
+                },
                 {origin: [34.74845, 32.05105], //jaffa
                 destination: [34.74845, 32.05105],
                 color: "#D93DBB",
