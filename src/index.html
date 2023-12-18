@@ -545,20 +545,20 @@ map.on("load", function() {
                             type: 'geojson',
                             data: point,
                         });
-                        map.addLayer({
-                            id: pointLayerName,
-                            type: 'symbol',
-                            source: pointSourceName,
-                            layout: {
-                                'icon-image': way.icon,
-                                'icon-size': 1.5,
-                                'icon-allow-overlap': true,
-                                'icon-ignore-placement': true,
-                            },
-                            paint: {
-                                'icon-color': way.color,
-                            },
-                        });
+                        // map.addLayer({
+                        //     id: pointLayerName,
+                        //     type: 'symbol',
+                        //     source: pointSourceName,
+                        //     layout: {
+                        //         'icon-image': way.icon,
+                        //         'icon-size': 1.5,
+                        //         'icon-allow-overlap': true,
+                        //         'icon-ignore-placement': true,
+                        //     },
+                        //     paint: {
+                        //         'icon-color': way.color,
+                        //     },
+                        // });
                     } else {
                         map.getSource(pointSourceName).setData(point);
                     }
