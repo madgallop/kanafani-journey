@@ -78,6 +78,7 @@ var config = {
             onChapterEnter: [],
             onChapterExit: []
         },
+        //has all origins and destinations as just simple points
         {
             id: 'chapter-3',
             alignment: 'left',
@@ -90,18 +91,13 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
-        // routes: [{
-            origin: [34.74945, 32.05105], //jaffa
-            destination: [35.95641, 31.94811],
-            color: "#D99E3D",
-            icon: "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/marwan_icon-02.svg",
-            // },]
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
         },
+        //has origins
         {
             id: 'chapter-4',
             alignment: 'left',
@@ -115,10 +111,47 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
-            origin: [34.74845, 32.05105], //jaffa
-            destination: [35.95541, 31.94811],
-            color: "#D99E3D",
-            icon: "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+            routes: [
+                {origin: [34.74845, 32.05105], //jaffa
+                destination: [34.74845, 32.05105],
+                color: "#D93DBB",
+                icon: "assad_icon-03",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+               },
+               {origin: [35.28463, 32.71906], //nazareth
+                destination: [35.28463, 32.71906],
+                color: "#3D8DD9",
+                icon: "qais_icon-04",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+               },
+              
+            ],
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        //first chapter with origins and destinations 
+        {
+            id: 'chapter-5',
+            alignment: 'left',
+            hidden: false,
+            title: 'Third Title',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [34.92452, 31.54914],
+                zoom: 6.78,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {
+                    origin: [35.28463, 32.71906], //jaffa
+                    destination: [35.95541, 31.94811],
+                    color: "#3D8DD9",
+                    icon: "qais_icon-04", //"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",    
+                },
+            ],
             
             mapAnimation: 'flyTo',
             rotateAnimation: false,
