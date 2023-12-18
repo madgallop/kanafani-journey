@@ -389,7 +389,7 @@ function createPoint(origin, icon) {
 function animateRoute(route, point, color, icon) {
   let counter = 0;
   const lineDistance = turf.length(route);
-  const steps = 500;
+  const steps = 150;
   const arc = [];
 
   for (let i = 0; i < lineDistance; i += lineDistance / steps) {
@@ -397,31 +397,51 @@ function animateRoute(route, point, color, icon) {
     arc.push(segment.geometry.coordinates);
   }
 
-  route.geometry.coordinates = arc;
-
   function animate() {
-    const start = route.geometry.coordinates[counter >= steps ? counter - 1 : counter];
-    const end = route.geometry.coordinates[counter >= steps ? counter : counter + 1];
-
-    if (!start || !end) {
-      return;
-    }
-
-    point.geometry.coordinates = route.geometry.coordinates[counter];
-
-    // point.properties.bearing = turf.bearing(turf.point(start), turf.point(end));
-
-    map.getSource('point-source').setData(point);
-
     if (counter < steps) {
+      const currentCoordinates = arc.slice(0, counter + 1);
+
+      // Draw the line segment from the start to the current position of the point
+      const lineSegment = {
+        type: 'Feature',
+        geometry: {
+          type: 'LineString',
+          coordinates: currentCoordinates,
+        },
+      };
+
+      // Add or update source and layer for the route segment
+      if (!map.getSource('route-segment-source')) {
+        map.addSource('route-segment-source', {
+          type: 'geojson',
+          data: lineSegment,
+        });
+        map.addLayer({
+          id: 'route-segment-layer',
+          type: 'line',
+          source: 'route-segment-source',
+          paint: {
+            'line-color': color,
+            'line-width': 2,
+          },
+        });
+      } else {
+        map.getSource('route-segment-source').setData(lineSegment);
+      }
+
+      // Move the point to update the icon position
+      point.geometry.coordinates = currentCoordinates[currentCoordinates.length - 1];
+      map.getSource('point-source').setData(point);
+
+      counter = counter + 1;
+
       requestAnimationFrame(animate);
     }
-
-    counter = counter + 1;
   }
 
   animate();
 }
+
 
 
 
@@ -452,15 +472,15 @@ map.on("load", function() {
                             type: 'geojson',
                             data: route,
                         });
-                        map.addLayer({
-                            id: 'route-layer',
-                            type: 'line',
-                            source: 'route-source',
-                            paint: {
-                                'line-color': way.color,
-                                'line-width': 2,
-                            },
-                        });
+                        // map.addLayer({
+                        //     id: 'route-layer',
+                        //     type: 'line',
+                        //     source: 'route-source',
+                        //     paint: {
+                        //         'line-color': way.color,
+                        //         'line-width': 2,
+                        //     },
+                        // });
                     } else {
                         map.getSource('route-source').setData(route);
                     }
