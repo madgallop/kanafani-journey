@@ -167,6 +167,35 @@ var config = {
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
+        },
+        {
+            id: 'chapter-6',
+            alignment: 'left',
+            hidden: false,
+            title: 'Third Title',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [34.92452, 31.54914],
+                zoom: 6,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {
+                    origin: [35.95541, 31.94811], 
+                    destination: [36.47181, 32.52623],
+                    color: "#3D8DD9",
+                    icon: "marwan_icon-02", //"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",    
+                    id: "M1",
+                }
+            ],
+            
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
         }
     ]
 };

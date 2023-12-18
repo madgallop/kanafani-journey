@@ -385,7 +385,17 @@ function createPoint(origin, icon) {
     };
     return point
 }
+
+let PointSourceNames = [];
+let PointLayerNames = [];
+
+
 function animateRoute(route, point, color, icon, wayID) {
+
+    // PointSourceNames = [];
+    // PointLayerNames = [];
+
+
   return new Promise(resolve => {
     let counter = 0;
     const lineDistance = turf.length(route);
@@ -398,6 +408,7 @@ function animateRoute(route, point, color, icon, wayID) {
     }
 
     function animate() {
+        
       if (counter < steps) {
         const currentCoordinates = arc.slice(0, counter + 1);
 
@@ -470,16 +481,18 @@ function animateRoute(route, point, color, icon, wayID) {
         resolve();
       }
     }
-
     animate();
+
+    PointSourceNames.push(`${wayID}-point-source`);
+    PointLayerNames.push(`${wayID}-point-layer`);
+    console.log(PointSourceNames)
+    console.log(PointLayerNames)
+    return PointSourceNames, PointLayerNames
+
   });
 }
 
 
-
-
-let prevPointSourceNames = [];
-let prevPointLayerNames = [];
 
 map.on("load", function() {
 
@@ -496,17 +509,20 @@ map.on("load", function() {
         var chapter = config.chapters[current_chapter];
 
         if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2" && chapter.id !== "chapter-3"&& chapter.id !== "chapter-4") {
-            console.log(prevPointLayerNames)
-            prevPointLayerNames.forEach(name => map.removeLayer(name));
-            prevPointSourceNames.forEach(name => map.removeSource(name));
-
-
-            // Clear the arrays
-            prevPointLayerNames = [];
-            prevPointSourceNames = [];
-            const animations = [];
-
             
+            
+            PointLayerNames.forEach(layerName => {
+                if (map.getLayer(layerName)) {
+                    map.removeLayer(layerName);
+                }
+            });
+            PointSourceNames.forEach(sourceName => {
+                if (map.getSource(sourceName)) {
+                    map.removeSource(sourceName);
+                }
+            });
+
+            const animations = [];
 
             for (const way of chapter.routes) {
                 const route = createRoute(way.origin, way.destination);
@@ -518,24 +534,6 @@ map.on("load", function() {
                     const routeSourceName = `route-source-${way.id}`;
                     const routeLayerName = `route-layer-${way.id}`;
 
-                    if (!map.getSource(routeSourceName)) {
-                        map.addSource(routeSourceName, {
-                            type: 'geojson',
-                            data: route,
-                        });
-                        // map.addLayer({
-                        //     id: routeLayerName,
-                        //     type: 'line',
-                        //     source: routeSourceName,
-                        //     paint: {
-                        //         'line-color': way.color,
-                        //         'line-width': 2,
-                        //     },
-                        // });
-                    } else {
-                        map.getSource(routeSourceName).setData(route);
-                    }
-
                     // Add or update source and layer for point
                     var pointSourceName = `point-source-${way.id}`;
                     var pointLayerName = `point-layer-${way.id}`;
@@ -545,20 +543,20 @@ map.on("load", function() {
                             type: 'geojson',
                             data: point,
                         });
-                        // map.addLayer({
-                        //     id: pointLayerName,
-                        //     type: 'symbol',
-                        //     source: pointSourceName,
-                        //     layout: {
-                        //         'icon-image': way.icon,
-                        //         'icon-size': 1.5,
-                        //         'icon-allow-overlap': true,
-                        //         'icon-ignore-placement': true,
-                        //     },
-                        //     paint: {
-                        //         'icon-color': way.color,
-                        //     },
-                        // });
+                        map.addLayer({
+                            id: pointLayerName,
+                            type: 'symbol',
+                            source: pointSourceName,
+                            layout: {
+                                'icon-image': "dot-11",
+                                'icon-size': 1,
+                                'icon-allow-overlap': true,
+                                'icon-ignore-placement': true,
+                            },
+                            paint: {
+                                'icon-color': way.color,
+                            },
+                        });
                     } else {
                         map.getSource(pointSourceName).setData(point);
                     }
@@ -571,9 +569,8 @@ map.on("load", function() {
 
                     // Wait for all animations to complete before moving to the next step
                     await Promise.all(animations);
-                    
-                    prevPointSourceNames.push(pointSourceName);
-                    prevPointLayerNames.push(pointLayerName);
+
+      
                 }
 
         
