@@ -362,6 +362,13 @@ var scroller = scrollama();
 
 
 function createRoute(origin, destination) {
+  // Check if both origin and destination are provided
+  if (!origin || !destination) {
+    // If either origin or destination is missing, do not continue
+    console.error('Both origin and destination are required.');
+    return null; // Or handle the error in a way that fits your application
+  }
+
   // Define a GeoJSON Feature object with a LineString geometry
   const route = {
     type: 'Feature',
@@ -370,6 +377,7 @@ function createRoute(origin, destination) {
       coordinates: [origin, destination],
     },
   };
+
   // Return the GeoJSON Feature
   return route;
 }
@@ -485,8 +493,8 @@ function animateRoute(route, point, color, icon, wayID) {
 
     PointSourceNames.push(`${wayID}-point-source`);
     PointLayerNames.push(`${wayID}-point-layer`);
-    console.log(PointSourceNames)
-    console.log(PointLayerNames)
+    // console.log(PointSourceNames)
+    // console.log(PointLayerNames)
     return PointSourceNames, PointLayerNames
 
   });
@@ -507,8 +515,9 @@ map.on("load", function() {
     .onStepEnter(async response => {
         var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
         var chapter = config.chapters[current_chapter];
+        console.log(chapter.id)
 
-        if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2" && chapter.id !== "chapter-3"&& chapter.id !== "chapter-4") {
+        if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2" && chapter.id !== "chapter-3") {
             
             
             PointLayerNames.forEach(layerName => {
@@ -525,10 +534,10 @@ map.on("load", function() {
             const animations = [];
 
             for (const way of chapter.routes) {
-                const route = createRoute(way.origin, way.destination);
-                const point = createPoint(way.origin, way.icon);
-
-                if (route && point) {
+                
+                if (way.origin && way.destination) {
+                    const route = createRoute(way.origin, way.destination);
+                    const point = createPoint(way.origin, way.icon);
 
                     // Add or update source and layer for route
                     const routeSourceName = `route-source-${way.id}`;
@@ -557,14 +566,53 @@ map.on("load", function() {
                                 'icon-color': way.color,
                             },
                         });
-                    } else {
-                        map.getSource(pointSourceName).setData(point);
-                    }
+                    } 
 
                     // animateRoute(map.getSource(routeSourceName)._data, map.getSource(pointSourceName)._data, way.color, way.icon, chapter.id);  
                     const animationPromise = animateRoute(route, point, way.color, way.icon, way.id);
                         animations.push(animationPromise);
+                    } 
+                    else if (way.origin) {
+                        console.log("YOU ARE HERE");
+                        const point = createPoint(way.origin, way.icon);
+
+                        // Add or update source and layer for the point
+                        const pointSourceId = `${way.id}-point-source`;
+                        const pointLayerId = `${way.id}-point-layer`;
+
+                        if (!map.getSource(pointSourceId)) {
+                            map.addSource(pointSourceId, {
+                                type: 'geojson',
+                                data: point,
+                            });
+                            PointSourceNames.push(pointSourceId)
+                            map.addLayer({
+                                id: pointLayerId,
+                                type: 'symbol',
+                                source: pointSourceId,
+                                layout: {
+                                    'icon-image': way.icon,
+                                    'icon-size': 1.5,
+                                    'icon-allow-overlap': true,
+                                    'icon-ignore-placement': true,
+                                },
+                                paint: {
+                                    'icon-color': way.color,
+                                },
+                            });
+                            PointLayerNames.push(pointLayerId)
+
+                        } else {
+                            map.getSource(pointSourceId).setData(point);
+                        }
+                    } else {
+                        map.getSource(pointSourceId).setData(point);
                     }
+
+
+
+
+
                     }
 
                     // Wait for all animations to complete before moving to the next step
