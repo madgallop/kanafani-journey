@@ -400,10 +400,6 @@ let PointLayerNames = [];
 
 function animateRoute(route, point, color, icon, wayID) {
 
-    // PointSourceNames = [];
-    // PointLayerNames = [];
-
-
   return new Promise(resolve => {
     let counter = 0;
     const lineDistance = turf.length(route);
@@ -493,13 +489,10 @@ function animateRoute(route, point, color, icon, wayID) {
 
     PointSourceNames.push(`${wayID}-point-source`);
     PointLayerNames.push(`${wayID}-point-layer`);
-    // console.log(PointSourceNames)
-    // console.log(PointLayerNames)
     return PointSourceNames, PointLayerNames
 
   });
 }
-
 
 
 map.on("load", function() {
@@ -515,9 +508,8 @@ map.on("load", function() {
     .onStepEnter(async response => {
         var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
         var chapter = config.chapters[current_chapter];
-        console.log(chapter.id)
 
-        if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2" && chapter.id !== "chapter-3") {
+        if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2") {
             
             
             PointLayerNames.forEach(layerName => {
@@ -573,7 +565,6 @@ map.on("load", function() {
                         animations.push(animationPromise);
                     } 
                     else if (way.origin) {
-                        console.log("YOU ARE HERE");
                         const point = createPoint(way.origin, way.icon);
 
                         // Add or update source and layer for the point
@@ -608,28 +599,14 @@ map.on("load", function() {
                     } else {
                         map.getSource(pointSourceId).setData(point);
                     }
-
-
-
-
-
                     }
-
                     // Wait for all animations to complete before moving to the next step
                     await Promise.all(animations);
-
-      
                 }
 
         
-        
         response.element.classList.add('active');
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
-
-        // Incase you do not want to have a dynamic inset map,
-        // rather want to keep it a static view but still change the
-        // bbox as main map move: comment out the below if section.
-
 
         if (chapter.onChapterEnter.length > 0) {
             chapter.onChapterEnter.forEach(setLayerOpacity);

@@ -91,6 +91,45 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
+            routes: [
+                {origin: [47.90120, 29.29724], //kuwait
+                // destination: [35.28463, 32.71906],
+                color: "white",
+                icon: "dot-11",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S1",
+                },
+                {origin: [47.95474, 30.02016], //border cross
+                // destination: [34.74845, 32.05105],
+                color: "white",
+                icon: "dot-11",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "S2",
+                },
+                {origin: [47.77828, 30.58547], //basra
+                // destination: [34.74845, 32.05105],
+                color: "white",
+                icon: "dot-11",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "S3",
+                },
+                {origin: [44.24839, 33.45881], //baghdad
+                // destination: [34.74845, 32.05105],
+                color: "white",
+                icon: "dot-11",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "S4",
+                },
+                {origin: [35.90394, 32.04215], //amman
+                // destination: [34.74845, 32.05105],
+                color: "white",
+                icon: "dot-11",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "S5",
+                },
+                {origin: [34.75989, 32.05948], //palestine
+                // destination: [34.74845, 32.05105],
+                color: "white",
+                icon: "dot-11",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "S6",
+                },
+                
+            ],
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
