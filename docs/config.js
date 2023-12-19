@@ -400,6 +400,45 @@ var config = {
         {
             id: 'chapter-10',
             alignment: 'left',
+            hidden: false,
+            title: 'Third Title',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [47.36687, 29.92355],
+                zoom: 7.3,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {origin: [47.45000, 29.57875], //final destination 
+                color: "#5C8451",
+                icon: "dead-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "D1",
+                text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
+                },
+                {origin: [47.40000, 29.57875], //village near Jaffa
+                color: "#5C8451",
+                icon: "dead-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "D2",
+                text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
+                },
+                {origin: [47.35000, 29.57875], //village near Jaffa
+                color: "#5C8451",
+                icon: "dead-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "D3",
+                text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
+                },
+            ],
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
+            id: 'chapter-11',
+            alignment: 'left',
             hidden: true,
             title: 'Third Title',
             // image: './path/to/image/source.png',
