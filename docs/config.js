@@ -82,9 +82,9 @@ var config = {
         {
             id: 'chapter-3',
             alignment: 'left',
-            hidden: true,
+            hidden: false,
             // title: 'Third Title',
-            description: 'Scroll or select a location below to trace the journeys of Marwan, Assad, and Abul Qais.',
+            description: 'انقر على نقطة رمادية على الخريطة لقراءة موقعها أو استمر في التمرير لعرض القصة',
             location: {
                 center: [40.24918, 31.47661],
                 zoom: 5.68,
@@ -97,6 +97,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "S1",
+                text: "قرية قريبة من يافا، فلسطين"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -105,6 +106,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S2",
+                text: "الرملة، فلسطين"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -113,6 +115,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S3",
+                text: "عكا، فلسطين"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -121,6 +124,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S4",
+                text: "مخيم الوليد للاجئين، العراق"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -129,6 +133,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S5",
+                text: "عمان، الأردن"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -137,6 +142,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S6",
+                text: "مخيم الكرامة للاجئين، العراق"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -145,6 +151,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S7",
+                text: "البصرة، العراق"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -153,6 +160,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S8",
+                text: "سفوان، حدود العراق"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
@@ -161,6 +169,7 @@ var config = {
                 color: "white",
                 icon: "locationMarker-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "S9",
+                text: "المطلاع، حدود الكويت"
                 // iconSize: .5, // Set the icon size for this marker
 
                 },
