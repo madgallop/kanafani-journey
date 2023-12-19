@@ -349,6 +349,12 @@ const transformRequest = (url) => {
     }
 }
 
+mapboxgl.setRTLTextPlugin(
+    'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
+    null,
+    true // Lazy load the plugin
+);
+
 var map = new mapboxgl.Map({
     container: 'map',
     style: config.style,
@@ -463,9 +469,9 @@ function animateRoute(route, point, color, icon, wayID, text) {
       map.on('click', pointLayerId, function (e) {
         const coordinates = e.features[0].geometry.coordinates.slice();
 
-        if (popup) {
-            popup.remove();
-        }
+        // if (popup) {
+        //     popup.remove();
+        // }
 
         new mapboxgl.Popup()
             .setLngLat(coordinates)
