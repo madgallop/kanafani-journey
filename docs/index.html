@@ -579,15 +579,18 @@ map.on("load", function() {
                             type: 'symbol',
                             source: pointSourceName,
                             layout: {
-                                'icon-image': "dot-11",
+                                'icon-image': "locationMarker-01",
                                 'icon-size': 1,
                                 'icon-allow-overlap': true,
                                 'icon-ignore-placement': true,
                             },
                             paint: {
                                 'icon-color': way.color,
+                                'icon-halo-color': way.glowColor || 'rgba(255, 255, 255, 0.5)', // Specify the glow color (default: white with 0.5 opacity)
+                                'icon-halo-width': 10, // Adjust the width of the glow
                             },
                         });
+
                     } 
 
                     // animateRoute(map.getSource(routeSourceName)._data, map.getSource(pointSourceName)._data, way.color, way.icon, chapter.id);  
