@@ -411,7 +411,6 @@ function createPopupContent(text) {
 
 
 function animateRoute(route, point, color, icon, wayID, text) {
-
   return new Promise(resolve => {
     let counter = 0;
     const lineDistance = turf.length(route);
@@ -424,7 +423,6 @@ function animateRoute(route, point, color, icon, wayID, text) {
     }
 
     function animate() {
-        
       if (counter < steps) {
         const currentCoordinates = arc.slice(0, counter + 1);
 
@@ -437,87 +435,84 @@ function animateRoute(route, point, color, icon, wayID, text) {
           },
         };
 
-      // Add or update source and layer for the route segment
-      const routeSourceId = `${wayID}-route-segment-source`;
-      const routeLayerId = `${wayID}-route-segment-layer`;
+        // Add or update source and layer for the route segment
+        const routeSourceId = `${wayID}-route-segment-source`;
+        const routeLayerId = `${wayID}-route-segment-layer`;
 
-      if (!map.getSource(routeSourceId)) {
-        map.addSource(routeSourceId, {
-          type: 'geojson',
-          data: lineSegment,
-        });
-        map.addLayer({
-          id: routeLayerId,
-          type: 'line',
-          source: routeSourceId,
-          paint: {
-            'line-color': color,
-            'line-width': 2,
-          },
-        });
+        if (!map.getSource(routeSourceId)) {
+          map.addSource(routeSourceId, {
+            type: 'geojson',
+            data: lineSegment,
+          });
+          map.addLayer({
+            id: routeLayerId,
+            type: 'line',
+            source: routeSourceId,
+            paint: {
+              'line-color': color,
+              'line-width': 2,
+            },
+          });
+        } else {
+          map.getSource(routeSourceId).setData(lineSegment);
+        }
+
+        // Move the point to update the icon position
+        point.geometry.coordinates = currentCoordinates[currentCoordinates.length - 1];
+
+        // Add or update source and layer for the point
+        const pointSourceId = `${wayID}-point-source`;
+        const pointLayerId = `${wayID}-point-layer`;
+
+        if (!map.getSource(pointSourceId)) {
+          map.addSource(pointSourceId, {
+            type: 'geojson',
+            data: point,
+          });
+          map.addLayer({
+            id: pointLayerId,
+            type: 'symbol',
+            source: pointSourceId,
+            layout: {
+              'icon-image': icon,
+              'icon-size': 1.5,
+              'icon-allow-overlap': true,
+              'icon-ignore-placement': true,
+            },
+            paint: {
+              'icon-color': color,
+            },
+          });
+
+          // Set up the click event outside of the animation loop
+          map.on('click', pointLayerId, function (e) {
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            new mapboxgl.Popup()
+              .setLngLat(coordinates)
+              .setHTML(createPopupContent(text))
+              .addTo(map);
+          });
+        } else {
+          map.getSource(pointSourceId).setData(point);
+        }
+
+        counter = counter + 1;
+
+        requestAnimationFrame(animate);
       } else {
-        map.getSource(routeSourceId).setData(lineSegment);
-      }
-
-      // Move the point to update the icon position
-      point.geometry.coordinates = currentCoordinates[currentCoordinates.length - 1];
-
-      // Add or update source and layer for the point
-      const pointSourceId = `${wayID}-point-source`;
-      const pointLayerId = `${wayID}-point-layer`;
-
-      map.on('click', pointLayerId, function (e) {
-        const coordinates = e.features[0].geometry.coordinates.slice();
-
-        // if (popup) {
-        //     popup.remove();
-        // }
-
-        new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML(createPopupContent(text))
-            .addTo(map);
-        });
-
-      if (!map.getSource(pointSourceId)) {
-        map.addSource(pointSourceId, {
-          type: 'geojson',
-          data: point,
-        });
-        map.addLayer({
-          id: pointLayerId,
-          type: 'symbol',
-          source: pointSourceId,
-          layout: {
-            'icon-image': icon,
-            'icon-size': 1.5,
-            'icon-allow-overlap': true,
-            'icon-ignore-placement': true,
-          },
-          paint: {
-            'icon-color': color,
-          },
-        });
-      } else {
-        map.getSource(pointSourceId).setData(point);
-      }
-
-      counter = counter + 1;
-
-      requestAnimationFrame(animate);
-    }else {
         // Animation is complete, resolve the Promise
         resolve();
       }
     }
+
     animate();
 
     PointSourceNames.push(`${wayID}-point-source`);
     PointLayerNames.push(`${wayID}-point-layer`);
-    return PointSourceNames, PointLayerNames
-
+    return PointSourceNames, PointLayerNames;
   });
 }
+
 
 
 map.on("load", function() {

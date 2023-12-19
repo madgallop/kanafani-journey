@@ -1,3 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
-  <circle cx="6" cy="6" r="4.34" fill="#777"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <g style="isolation: isolate">
+    <g>
+      <image width="48" height="48" transform="translate(0.24 0.24) scale(0.24)" opacity="0.75" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAEPElEQVRoQ9VZXVfbMBRTaAsUVmD//08OGNCVlu7BFlGU69hp97DqnHuSNI4j+X7YTrvj8YhLxlWtwf+OixewrDVoRFdrUMDZ8XuOACXd2bGGiPhJYk4R4GQ7seg+cQyOR4yJzxIyR4ATBlIOqQBea3tCiX9hKOArt1fyTUJaBTj5KzlGpiIJJevWyT22dUEhWgQoeSe6QOpjIdeRCCd/kONerjtp0ySiJiAiv0BPfAlgJedLua/hRPIH9KRpn3J+QI8mEVMCIvIkuAJwnY83dk0hkQAlvcvHP3bd5TZAg4gWDyh5jvhNtttsPFcR9AIwDBeS3SKRX+VzCv7Mz7iIECUBXlkYFiS/znaXjdcuQgU4+Y9sKwzFAsPyOlmZaiGkca/k7wDcA/iR7T7bOre5RixghzTqHwDesnm4AcMSq2V3hEiAVg+KWCKRooB7AA9iG/Qi6IWSgC0ScYrVdqUyCwzz6RtTHvBSuUIid4c06g8AngA8ZtugDycnRgEc/bvcl7fRXNHyesSwQn2jlgMcfYaPC3gE8BNJyCb/vkbvgUXuj6R2SAJ+5z5dIPOEpZVlVye7AVxAZ+Ye0BDaIAl4yvaAsYAohG7RJ67e+5Ntm00rmXICREiLBzQHbtELoIgN+lxoEaAjf0Aaba1KND6vAkYoJTEQ54CLYDhpNaKAaB7wsCH5e6TELs0lV/n5URi1esBFMB/WgTFElhi6fI+YPJ9h+Y3Iz/KAwvNARVDItdkKsQCek3zUhy5FfD0VouaBkidKtrBzTzp6otaHj/zJHgBiIWoLuy69NOrDn436mMQVLhwtHvA1idvBrrV9rQ9/dqqPECUB0WLKp/nIeJ+u9yqkbab6iIQ0L+YUJK8v5ZKYK8udmNZ5rTwUoM9GffjujCKKqHnAR54EOOVz1mTt1zrvdf+Afi3kxs2Niog8MUIkgA1L5En8DWkmjhZmn0h9uyBdzNHec18UUhIBBCJaPcCXK3mddXVhxkmqJuAFwGs2bm5UxB4neOAoR49/bsApwNf8ujBrWU6/AvgF4Bm9iA/0m3zPgzCZWzyg5HWZ4COsa5vahuYdifRzthf04cR8oIhZHlB8IVUR9cAWw9mT7fboV5WtW8o3JBEvGAso5cAIU0ncYeiFHYZTPTAeWYbWnE09k1lDSHPAw3qAKQ+QPL3Aj05+XwWc8lnlPRuvGT5eRkNM5QBB93XoPzrxd99RnfJhayvnSj5K4BFaZ2IgvZy/eYJTwL/4tEih1dEH6iGkeQCkjl3AHuP1/Dkfd6PQmR1CRCSCvyshEi5tA1U0n9OwUtLN5AGga/yfWFeX3JSUNjhOnnAREWGNeaBCHqh7gFBPAL03+FIXBsQC9JmjmPbXTB5o94DCCfr2r0UAjxHhWYRaPaDwF9A7wJh0CRHZWcSJUwQQ0QvnkpjbfoRzBCjOJnIqLv6rxMUL+AuCcZZlC8/YzQAAAABJRU5ErkJggg==" style="mix-blend-mode: multiply"/>
+      <circle cx="6" cy="6" r="2.62" fill="#777"/>
+    </g>
+  </g>
 </svg>
