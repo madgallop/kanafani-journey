@@ -20,7 +20,7 @@ var config = {
             alignment: 'full',
             // hidden: false,
             // title: 'Introduction and ',
-            image: 'https://i0.wp.com/arablit.org/wp-content/uploads/2023/04/Untitled-design-174.png?w=1024&ssl=1',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/meninthesuncover-01.jpg',
             description: 'Three Palestinian men take journeys hoping to reach Kuwait....',
             location: {
                 center: [40.24918, 31.47661],
