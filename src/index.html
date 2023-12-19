@@ -82,15 +82,15 @@
             background-color: #fafafa;
         }
         .dark {
-            color: #F8F6F2;
-            background-color: rgba(119, 118, 118, 0.5);
+            color: rgba(119, 118, 118);
+            background-color: rgba(119, 118, 118, 0);
         }
         .step {
             padding-bottom: 0vh;
             /* margin-bottom: 10vh; */
             opacity: 0.25;
             transition: opacity 1s ease; /* Adjust the transition duration as needed */
-            background-color: #F8F6F2;
+            background-color: #f8f6f200;
         }
         .step.active {
             opacity: 0.9;
@@ -371,13 +371,6 @@ var scroller = scrollama();
 
 
 function createRoute(origin, destination) {
-  // Check if both origin and destination are provided
-  if (!origin || !destination) {
-    // If either origin or destination is missing, do not continue
-    console.error('Both origin and destination are required.');
-    return null; // Or handle the error in a way that fits your application
-  }
-
   // Define a GeoJSON Feature object with a LineString geometry
   const route = {
     type: 'Feature',
@@ -411,7 +404,7 @@ function createPopupContent(text) {
 }
 
 
-function animateRoute(route, point, color, icon, wayID) {
+function animateRoute(route, point, color, icon, wayID, text) {
 
   return new Promise(resolve => {
     let counter = 0;
@@ -469,7 +462,10 @@ function animateRoute(route, point, color, icon, wayID) {
 
       map.on('click', pointLayerId, function (e) {
         const coordinates = e.features[0].geometry.coordinates.slice();
-        const text = way.text;
+
+        if (popup) {
+            popup.remove();
+        }
 
         new mapboxgl.Popup()
             .setLngLat(coordinates)
@@ -532,6 +528,9 @@ map.on("load", function() {
         var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
         var chapter = config.chapters[current_chapter];
 
+        response.element.classList.add('active');
+        map[chapter.mapAnimation || 'flyTo'](chapter.location);
+
         if (chapter.id !== "chapter-1" && chapter.id !== "chapter-2") {
             
             
@@ -586,7 +585,7 @@ map.on("load", function() {
                     } 
 
                     // animateRoute(map.getSource(routeSourceName)._data, map.getSource(pointSourceName)._data, way.color, way.icon, chapter.id);  
-                    const animationPromise = animateRoute(route, point, way.color, way.icon, way.id);
+                    const animationPromise = animateRoute(route, point, way.color, way.icon, way.id, way.text);
                         animations.push(animationPromise);
                     } 
                     else if (way.origin) {
@@ -600,10 +599,14 @@ map.on("load", function() {
                         const coordinates = e.features[0].geometry.coordinates.slice();
                         const text = way.text;
 
+                      
+
                         new mapboxgl.Popup()
                             .setLngLat(coordinates)
                             .setHTML(createPopupContent(text))
                             .addTo(map);
+
+                        
                     });
 
 
