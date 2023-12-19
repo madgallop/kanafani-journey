@@ -112,6 +112,15 @@
                 margin: 0 auto;
             }
         }
+        .mapboxgl-popup {
+            max-width: 400px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-size: 14px;
+        }
 
         /* Fix issue on mobile browser where scroll breaks  */
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
@@ -397,6 +406,10 @@ function createPoint(origin, icon) {
 let PointSourceNames = [];
 let PointLayerNames = [];
 
+function createPopupContent(text) {
+    return `<div>${text}</div>`;
+}
+
 
 function animateRoute(route, point, color, icon, wayID) {
 
@@ -453,6 +466,16 @@ function animateRoute(route, point, color, icon, wayID) {
       // Add or update source and layer for the point
       const pointSourceId = `${wayID}-point-source`;
       const pointLayerId = `${wayID}-point-layer`;
+
+      map.on('click', pointLayerId, function (e) {
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const text = way.text;
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(createPopupContent(text))
+            .addTo(map);
+        });
 
       if (!map.getSource(pointSourceId)) {
         map.addSource(pointSourceId, {
@@ -535,6 +558,8 @@ map.on("load", function() {
                     const routeSourceName = `route-source-${way.id}`;
                     const routeLayerName = `route-layer-${way.id}`;
 
+                    
+
                     // Add or update source and layer for point
                     var pointSourceName = `point-source-${way.id}`;
                     var pointLayerName = `point-layer-${way.id}`;
@@ -570,6 +595,17 @@ map.on("load", function() {
                         // Add or update source and layer for the point
                         const pointSourceId = `${way.id}-point-source`;
                         const pointLayerId = `${way.id}-point-layer`;
+
+                        map.on('click', pointLayerId, function (e) {
+                        const coordinates = e.features[0].geometry.coordinates.slice();
+                        const text = way.text;
+
+                        new mapboxgl.Popup()
+                            .setLngLat(coordinates)
+                            .setHTML(createPopupContent(text))
+                            .addTo(map);
+                    });
+
 
                         if (!map.getSource(pointSourceId)) {
                             map.addSource(pointSourceId, {

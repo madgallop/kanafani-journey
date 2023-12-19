@@ -151,17 +151,26 @@ var config = {
                 bearing: 0
             },
             routes: [
-                {origin: [35.28463, 32.71906], //nazareth
+                {origin: [34.78160, 32.02187], //village near Jaffa
                 // destination: [35.28463, 32.71906],
                 color: "#3D8DD9",
-                icon: "qais_icon-04",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                icon: "qais_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "Q1",
+                text: "Abu Qais is from a village near Jaffa."
                 },
-                {origin: [34.74845, 32.05105], //jaffa
+                {origin: [34.86161, 31.92999], //Ramla
                 // destination: [34.74845, 32.05105],
                 color: "#D93DBB",
                 icon: "assad_icon-03",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "A1",
+                text: "Assad is from Ramla"
+                },
+                {origin: [35.07506, 32.92854], //Acre?? 
+                // destination: [34.74845, 32.05105],
+                color: "#D99E3D",
+                icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "M1",
+                text: "Marwan's family lived in Palestine (town unknow, reconstructed as Acre)'"
                 },
             ],
             mapAnimation: 'flyTo',
@@ -179,25 +188,32 @@ var config = {
             // image: './path/to/image/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
-                center: [34.92452, 31.54914],
-                zoom: 6.78,
+                center: [36.34652, 31.54914], 
+                zoom: 7.5,
                 pitch: 0,
                 bearing: 0
             },
             routes: [
-                {
-                    origin: [35.28463, 32.71906], 
-                    destination: [35.95541, 31.94811],
-                    color: "#3D8DD9",
-                    icon: "qais_icon-04", //"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",    
-                    id: "Q2",
+                {origin: [34.78160, 32.02187], //village near Jaffa
+                destination: [38.93271, 33.43336],
+                color: "#3D8DD9",
+                icon: "qais_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "Q1",
+                text: "Abu Qais fled the village a month before his wife was set to give birth, went to another village “far from the firing line.”"
                 },
-                {
-                    origin: [34.74845, 32.05105], //jaffa
-                    destination: [35.95541, 31.94811],
-                    color: "#D93DBB",
-                    icon: "assad_icon-03",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
-                    id: "A2",
+                {origin: [34.86161, 31.92999], //Ramla
+                destination: [35.93962, 31.93019],
+                color: "#D93DBB",
+                icon: "assad_icon-03",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "A1",
+                text: "Assad comes to Iraq from Amman"
+                },
+                {origin: [35.08703, 32.91745], //Acre?? 
+                destination: [43.66050, 34.60925],
+                color: "#D99E3D",
+                icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "M1",
+                text: "Marwan's brother fled to Kuwait before him, leaving school when the family left Palestine."
                 },
             ],
             
@@ -221,12 +237,113 @@ var config = {
                 bearing: 0
             },
             routes: [
-                {
-                    origin: [35.95541, 31.94811], 
-                    destination: [36.47181, 32.52623],
-                    color: "#3D8DD9",
-                    icon: "marwan_icon-02", //"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",    
-                    id: "M1",
+                {origin: [38.93271, 33.43336], //village near Jaffa
+                destination: [47.80551, 30.53819],
+                color: "#3D8DD9",
+                icon: "qais_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "Q1",
+                text: "Abu Qais finds himself at the Shatt-Al Arab where the Tigris and Euphrates join in Basra.”"
+                },
+                {origin: [35.93962, 31.93019], //Ramla
+                destination: [47.80551, 30.53819],
+                color: "#D93DBB",
+                icon: "assad_icon-03",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "A1",
+                text: "Assad stays in the Shatt Al-Arab hotel in Basra, after getting a ride from H4 in Jordan. He intended to go to Baghdad."
+                },
+                {origin: [43.60170, 34.64992], //Acre?? 
+                destination: [47.80551, 30.53819],
+                color: "#D99E3D",
+                icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                id: "M1",
+                text: "Marwan also stays in the Shatt Al-Arab hotel."
+                },
+            ],
+            
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
+            id: 'chapter-7',
+            alignment: 'left',
+            hidden: false,
+            title: 'Third Title',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [34.92452, 31.54914],
+                zoom: 6,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {origin: [47.80551, 30.53819], //village near Jaffa
+                destination: [47.71766, 30.12715],
+                color: "#5C8451",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S1",
+                text: "Abul Kheizuran takes the three men to Safwa, where they get into the tank for the first time.”"
+                }
+            ],
+            
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
+            id: 'chapter-8',
+            alignment: 'left',
+            hidden: false,
+            title: 'Third Title',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [34.92452, 31.54914],
+                zoom: 6,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {origin: [47.71766, 30.12715], //village near Jaffa
+                destination: [47.70867, 30.10687],
+                color: "#5C8451",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S2",
+                text: "Then men get out near a hill hiding Sawfa, prepare to cross into Kuwait.”"
+                }
+            ],
+            
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
+            id: 'chapter-9',
+            alignment: 'left',
+            hidden: false,
+            title: 'Third Title',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [34.92452, 31.54914],
+                zoom: 6,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {origin: [47.70867, 30.10687], //village near Jaffa
+                destination: [47.63514, 29.57875],
+                color: "#5C8451",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S2",
+                text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
                 }
             ],
             
