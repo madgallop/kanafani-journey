@@ -187,7 +187,7 @@ var config = {
             hidden: false,
             title: "فلسطين قبل النكبة",
             // image: './path/to/image/source.png',
-            description: "نعلم أن كل رجل غادر فلسطين في نكبة عام ١٩٤٨. اسعد من الرملة و ابو قيس من قرية قريبة من يافا. لا نعرف بالضبط من وين مروان،  فوضعته في شمال فلسطين، في عكا، حيث ينتمي كنفاني. <br><br><i><span style='color: #777777'>مثلت أبو قيس و مروان بخطوط منقطة لتمثيل الشكوك حول من أين هم<\i><\span><br><br><span style='color: #D93D5C'>انقر على الرموز لمعرفة اكثر<\span>",
+            description:"قبل نكبة عام ١٩٤٨ كان الرجال الثلاثة يعيشون في فلسطين مع عائلاتهم.  اسعد من الرملة و ابو قيس من قرية قريبة من يافا. لا نعرف بالضبط من وين مروان، فوضعته في شمال فلسطين، في عكا، حيث ينتمي كنفان<br><br><i>مثلت أبو قيس و مروان بخطوط منقطة لتمثيل الشكوك حول من أين هم<\i><br><br><span style='color: #D93D5C'>انقر على الرموز لمعرفة اكثر<\span>",
             location: {
                 center: [34.92452, 31.94914],
                 zoom: 7.5,
@@ -215,7 +215,7 @@ var config = {
                 color: "#D99E3D",
                 icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "M1",
-                text: "مروان، من فلسطين"
+                text: "مروان من فلسطين، ولكننا لا نعرف الكثير عن حياته قبل النكبة، ربما لا يملك ذكريات عنها"
                 },
             ],
             mapAnimation: 'flyTo',
@@ -228,10 +228,10 @@ var config = {
         {
             id: 'chapter-5',
             alignment: 'left',
-            hidden: true,
-            title: 'Third Title',
+            hidden: false,
+            title: 'مخيمات اللاجئين بعد النكبة',
             // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            description: 'بعد النكبة، يغادر الرجال فلسطين ويعيشون لمدة عشر سنوات في مخيمات اللاجئين خارج البلاد. ذهب أسعد إلى عمان، وبينما لا نعرف أين ذهب أبو قيس ومروان، اعتقدت أنهم ربما ذهبوا إلى مخيمات اللاجئين الفلسطينيين داخل العراق. الظروف صعبة في المخيمات، والرجال يحلمون بحياة مختلفة<br><br><span style="color: #D93D5C">انقر على الرموز لمعرفة اكثر<\span>',
             location: {
                 center: [36.91460, 31.54914], 
                 zoom: 5.5,
@@ -258,7 +258,7 @@ var config = {
                 color: "#D99E3D",
                 icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "M2",
-                text: "Marwan's brother fled to Kuwait before him, leaving school when the family left Palestine."
+                text: 'بعد النكبة، عاش مروان وعائلته في مخيم للاجئين خارج فلسطين. أرسل أخه زكريا أموال للعائلة، لكنه توقف بعد أن تزوج سراً. بعد ذلك، ترك والد مروان العائلة، ليتزوج ويعيش في منزل مع امرأة أخرى، وجاء دور مروان ليذهب "يغوص في المقلاة<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/MarwanRefugeeCamp.png" alt="Image Alt Text" style="width: 200px; height: auto;">',
                 },
             ],
             
@@ -301,7 +301,7 @@ var config = {
                 color: "#D99E3D",
                 icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "M3",
-                text: "Marwan also stays in the Shatt Al-Arab hotel."
+                text: 'يصل مروان إلى البصرة، ويفشل في الاتفاق مع مهرب غاضب. يعرض رجل اسمه أبو الخيزيران المساعدة. مروان في فندق الشط حيث يلتقي باسعد<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/MarwanBasra.png" style="width: 200px; height: auto;">',
                 },
             ],
             
