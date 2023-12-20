@@ -474,7 +474,7 @@ var config = {
             },
             routes: [
                 {origin: [47.66433, 30.03867], //village near Jaffa
-                destination: [47.58394, 30.04764],
+                destination: [47.65949, 29.96426],
                 color: "#5C8451",
                 icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "S6",
@@ -501,11 +501,11 @@ var config = {
                 bearing: 0
             },
             routes: [
-                {origin: [47.58394, 30.04764],
+                {origin: [47.65949, 29.96426],
                 destination: [47.6000, 29.57875], //final destination 
                 color: "#5C8451",
                 icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
-                id: "S5",
+                id: "S7",
                 },
                 {origin: [47.45000, 29.57875], //final destination 
                 color: "#5C8451",
