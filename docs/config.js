@@ -20,7 +20,7 @@ var config = {
             alignment: 'full',
             // hidden: false,
             // title: 'Introduction and ',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/meninthesuncover-01.jpg',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/meninthesuncover-01.jpg?raw=true',
             description: 'Three Palestinian men take journeys hoping to reach Kuwait....',
             location: {
                 center: [40.24918, 31.47661],
@@ -50,9 +50,9 @@ var config = {
             alignment: 'full',
             hidden: false,
             // title: 'Second Title',
-            image1: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/MarwaHeadshotReal.png',
-            image2: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AssadHeadshot.png',
-            image3: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AbuQaisHead.png',
+            image1: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/MarwaHeadshotReal.png?raw=true',
+            image2: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/AssadHeadshot.png?raw=true',
+            image3: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/AbuQaisHead.png?raw=true',
             marker1: true,
             marker2: true,
             marker3: true,
@@ -200,8 +200,8 @@ var config = {
                 color: "#3D8DD9",
                 icon: "qais_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "Q1",
-                text: 'عاش أبو قيس في قرية قريبة من يافا مع زوجته وابنه قيس حتى هجوم الجيش الإسرائيلي<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/QaisVillageNearYaffa.png" alt="Image Alt Text" style="width: 200px; height: auto;">',
-                image: "/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/QaisVillageNearYaffa.png"
+                text: 'عاش أبو قيس في قرية قريبة من يافا مع زوجته وابنه قيس حتى هجوم الجيش الإسرائيلي<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/QaisVillageNearYaffa.png?raw=true" alt="Image Alt Text" style="width: 200px; height: auto;">',
+                image: "https://github.com/madgallop/kanafani-journey/blob/main/assets/images/QaisVillageNearYaffa.png?raw=true"
                 },
                 {origin: [34.86161, 31.92999], //Ramla
                 // destination: [34.74845, 32.05105],
@@ -244,21 +244,21 @@ var config = {
                 color: "#3D8DD9",
                 icon: "qais_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "Q2",
-                text: 'ذهب أبو قيس وعائلته إلى مخيم للاجئين خارج فلسطين (بعيداً عن خط النار) حيث سيقضون السنوات العشر القادمة. شعر أبو قيس بالخجل من ترك أرضه، وبالضغط من أجل إعالة أسرته. رجل عاد مؤخراً من الكويت يصف التجربة ويخبر أبو قيس أنه فقد شبابه وبلده. وبعد ذلك يقرر أبو قيس الذهاب إلى الكويت<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/QaisRefugeeCamp.png" alt="Image Alt Text" style="width: 200px; height: auto;">',
+                text: 'ذهب أبو قيس وعائلته إلى مخيم للاجئين خارج فلسطين (بعيداً عن خط النار) حيث سيقضون السنوات العشر القادمة. شعر أبو قيس بالخجل من ترك أرضه، وبالضغط من أجل إعالة أسرته. رجل عاد مؤخراً من الكويت يصف التجربة ويخبر أبو قيس أنه فقد شبابه وبلده. وبعد ذلك يقرر أبو قيس الذهاب إلى الكويت<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/QaisRefugeeCamp.png?raw=true" alt="Image Alt Text" style="width: 200px; height: auto;">',
                 },
                 {origin: [34.86161, 31.92999], //Ramla
                 destination: [35.93962, 31.93019],
                 color: "#D93DBB",
                 icon: "assad_icon-03",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "A2",
-                text: 'في عمان، يواجه اسعد مشاكل مع الشرطة بسبب أنشطته الناشطة. وفي النهاية، يعطيه عمه المال ليذهب إلى الكويت، على أمل أن يعود اسعد ويتزوج بنته. اسعد لا يريد الزواج من البنت، لكنه يأخذ الفلوس ويذهب إلى الكويت<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AssadJordan.png" alt="Image Alt Text" style="width: 200px; height: auto;">',
+                text: 'في عمان، يواجه اسعد مشاكل مع الشرطة بسبب أنشطته الناشطة. وفي النهاية، يعطيه عمه المال ليذهب إلى الكويت، على أمل أن يعود اسعد ويتزوج بنته. اسعد لا يريد الزواج من البنت، لكنه يأخذ الفلوس ويذهب إلى الكويت<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/AssadJordan.png?raw=true" alt="Image Alt Text" style="width: 200px; height: auto;">',
                 },
                 {origin: [35.08703, 32.91745], //Acre?? 
                 destination: [43.66050, 34.60925],
                 color: "#D99E3D",
                 icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "M2",
-                text: 'بعد النكبة، عاش مروان وعائلته في مخيم للاجئين خارج فلسطين. أرسل أخه زكريا أموال للعائلة، لكنه توقف بعد أن تزوج سراً. بعد ذلك، ترك والد مروان العائلة، ليتزوج ويعيش في منزل مع امرأة أخرى، وجاء دور مروان ليذهب "يغوص في المقلاة<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/MarwanRefugeeCamp.png" alt="Image Alt Text" style="width: 200px; height: auto;">',
+                text: 'بعد النكبة، عاش مروان وعائلته في مخيم للاجئين خارج فلسطين. أرسل أخه زكريا أموال للعائلة، لكنه توقف بعد أن تزوج سراً. بعد ذلك، ترك والد مروان العائلة، ليتزوج ويعيش في منزل مع امرأة أخرى، وجاء دور مروان ليذهب "يغوص في المقلاة<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/MarwanRefugeeCamp.png?raw=true" alt="Image Alt Text" style="width: 200px; height: auto;">',
                 },
             ],
             
@@ -273,7 +273,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'البصرة عام ١٩٥٨',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/allTheMenInBasra.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/allTheMenInBasra.png?raw=true',
             description: 'تلتقي رحلات الرجال الثلاثة في حرارة شهر أغسطس عام ١٩٥٨ في البصرة، بعد عشر سنوات من النكبة. يحاولون لايجاد على مهرب لنقلهم عبر الحدود إلى الكويت. توصلوا إلى اتفاق مع رجل اسمه أبو الخيزران الذي يوافق على لأخذهم إلى الكويت داخل شاحنته<br><br><span style="color: #D93D5C">انقر على الرموز لمعرفة اكثر<\span>',
             location: {
                 center: [41.22126, 31.54914],
@@ -287,27 +287,27 @@ var config = {
                 color: "#3D8DD9",
                 icon: "qais_icon-04",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "Q3",
-                text: 'وصل أبو قيس شمال البصرة إلى منطقة تسمى شط العرب حيث يلتقي نهرا دجلة والفرات فيشكلان نهرا واحدا. وجد نفسه في بستان من أشجار النخيل بجانب الماء<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AbuQaisShatAlArab.png" style="width: 200px; height: auto;">',
+                text: 'وصل أبو قيس شمال البصرة إلى منطقة تسمى شط العرب حيث يلتقي نهرا دجلة والفرات فيشكلان نهرا واحدا. وجد نفسه في بستان من أشجار النخيل بجانب الماء<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/AbuQaisShatAlArab.png?raw=true" style="width: 200px; height: auto;">',
                 },
                 {origin: [35.93962, 31.93019], //Ramla
                 destination: [47.80551, 30.53819],
                 color: "#D93DBB",
                 icon: "assad_icon-03",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "A3",
-                text: 'واجه اسعد رحلة صعبة إلى البصرة. وافق أحد المهربين على نقله من عمان إلى بغداد، لكن المهرب طلب من اسعد أن يتجول في منطقة H4 في الأردن ثم تركه. وجدوه زوجان أجنبيان على الطريق وأخذوه إلى البصرة. وهناك أقام في فندق الشط مع مروان وساعد الرجال في التفاوض<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AssadH4.png" style="width: 200px; height: auto;">',
+                text: 'واجه اسعد رحلة صعبة إلى البصرة. وافق أحد المهربين على نقله من عمان إلى بغداد، لكن المهرب طلب من اسعد أن يتجول في منطقة H4 في الأردن ثم تركه. وجدوه زوجان أجنبيان على الطريق وأخذوه إلى البصرة. وهناك أقام في فندق الشط مع مروان وساعد الرجال في التفاوض<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/AssadH4.png?raw=true" style="width: 200px; height: auto;">',
                 },
                 {origin: [43.60170, 34.64992], //Acre?? 
                 destination: [47.80551, 30.53819],
                 color: "#D99E3D",
                 icon: "marwan_icon-02",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "M3",
-                text: 'يصل مروان إلى البصرة، ويفشل في الاتفاق مع مهرب غاضب. يعرض رجل اسمه أبو الخيزيران المساعدة. مروان في فندق الشط حيث يلتقي باسعد<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/MarwanBasra.png" style="width: 200px; height: auto;">',
+                text: 'يصل مروان إلى البصرة، ويفشل في الاتفاق مع مهرب غاضب. يعرض رجل اسمه أبو الخيزيران المساعدة. مروان في فندق الشط حيث يلتقي باسعد<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/MarwanBasra.png?raw=true" style="width: 200px; height: auto;">',
                 },
                 {origin: [47.80551, 30.53819], //basra
                 color: "#3D8DD9",
                 icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "AB1",
-                text:'أبو الخيزران<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AbulKeizuran.png" style="width: 200px; height: auto;">',
+                text:'أبو الخيزران<br><br><img src="https://github.com/madgallop/kanafani-journey/blob/main/assets/images/AbulKeizuran.png?raw=true" style="width: 200px; height: auto;">',
                 },
             ],
             
@@ -322,7 +322,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'من البصرة إلى صفوان',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/FirstStop.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/FirstStop.png?raw=true',
             description: 'يقود الرجال السيارة حتى السيارة قريبة من مكتب الحدود العراقية في صفوان. يدخل أبو قيس وأسعد ومرقان إلى خزان المياه، و يخبرهم أبو خيزران أنه سيفتح الخزان بعد خمسة أو ستة دقائق',
             location: {
                 center: [47.36687, 29.92355],
@@ -351,7 +351,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'مكتب حدود سفوان',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AbuInTheOfficeStop1.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/AbuInTheOfficeStop1.png?raw=true',
             description: 'أبو الخيزران يتعامل مع الضباط على الحدود العراقية بينما ينتظر الرجال في خزان المياه',
             location: {
                 center: [47.36687, 29.92355],
@@ -380,7 +380,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'مكتب حدود سفوان إلى ٥٠م خارجه',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/PostBorderStop1.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/PostBorderStop1.png?raw=true',
             description: 'يفتح أبو الخيزران الخزان بعد ست دقائق. الرجال متعبون وضعفاء. مروان يعبر خوفه من وصوله إلى الكويت حيا',
             location: {
                 center: [47.36687, 29.92355],
@@ -408,7 +408,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'قريب من مكتب حدود الكويت',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/preBorder2Shot.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/preBorder2Shot.png?raw=true',
             description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
             location: {
                 center: [47.36687, 29.92355],
@@ -436,7 +436,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'في مكتب الحدود الكويتية',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/borderStop2.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/postBorder2Stop.png?raw=true',
             description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
             location: {
                 center: [47.36687, 29.92355],
@@ -464,7 +464,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'على بعد ٥٠م من مكتب الحدود الكويتي',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/postBorder2Stop.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/preBorder2Shot.png?raw=true',
             description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
             location: {
                 center: [47.36687, 29.92355],
@@ -492,7 +492,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Third Title',
-            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/FinalDump.png',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/FinalDump.png?raw=true',
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [47.36687, 29.92355],
