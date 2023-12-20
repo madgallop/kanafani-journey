@@ -495,8 +495,8 @@ var config = {
             image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/FinalDump.png?raw=true',
             description: 'يأخذ جثث الرجال إلى منطقة القمامة خارج مدينة الكويت. يترك الجثث هناك بعد أن أخذ أموالهم وساعة مروان. في الكتاب، عنده أبو الخيزران فكرة واحدة فقط، ويكررها عبر الصحراء: <br><br><i><span style="color: #D93D5C">لماذة لم يدقوا جران الخزان؟<\span><\i>',
             location: {
-                center: [47.36687, 29.92355],
-                zoom: 7.3,
+                center: [47.6000, 29.57875],
+                zoom: 9,
                 pitch: 0,
                 bearing: 0
             },
@@ -534,17 +534,37 @@ var config = {
         },
         {
             id: 'chapter-15', //overview map and concluding statement -- write concluding statement 
-            alignment: 'left',
-            hidden: true,
-            title: 'Third Title',
+            alignment: 'center',
+            hidden: false,
+            // title: 'Third Title',
             // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            description: '<span style="color: #AA1823">نهاية القصة حزينة ويائسة. سافر الرجال في القصة عبر الشرق الأوسط من فلسطين إلى الحدود الكويتية، بحثا عن حياة أفضل لأنفسهم ولأسرهم. نجوا من النكبة، وعشر سنوات في مخيمات اللاجئين، ورحلات صعبة إلى البصرة، لتنتهي حياتهم دقائق من الكويت على أيدي أنظمة فاسدة وظروف غير عادلة. في حين أن كل قصة مختلفة، الأجيال الثلاثة من الرجال الفلسطينيين الذين يمثلهم أبو قيس واسعد ومروان يمثلون الخيارات المستحيلة التي يواجهها الفلسطينيون تحت ظروف ظالمة الاحتلال الإسرائيلي  وخارجه<\span>',
             location: {
                 center: [40.24918, 31.47661],
                 zoom: 5.68,
                 pitch: 0,
                 bearing: 0
             },
+            routes: [
+                {origin: [47.45000, 29.57875], //final destination 
+                color: "#5C8451",
+                icon: "dead-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "D1",
+                // text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
+                },
+                {origin: [47.40000, 29.57875], //village near Jaffa
+                color: "#5C8451",
+                icon: "dead-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "D2",
+                // text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
+                },
+                {origin: [47.35000, 29.57875], //village near Jaffa
+                color: "#5C8451",
+                icon: "dead-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "D3",
+                // text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
+                },
+            ],
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
