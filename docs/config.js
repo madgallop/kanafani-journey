@@ -436,7 +436,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'في مكتب الحدود الكويتية',
-            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/postBorder2Stop.png?raw=true',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/borderStop2.png?raw=true',
             description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
             location: {
                 center: [47.36687, 29.92355],
@@ -464,7 +464,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'على بعد ٥٠م من مكتب الحدود الكويتي',
-            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/preBorder2Shot.png?raw=true',
+            image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/postBorder2Stop.png?raw=true',
             description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
             location: {
                 center: [47.36687, 29.92355],
@@ -477,7 +477,7 @@ var config = {
                 destination: [47.58394, 30.04764],
                 color: "#5C8451",
                 icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
-                id: "S4",
+                id: "S6",
                 }
             ],
             
