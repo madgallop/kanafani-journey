@@ -273,7 +273,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'البصرة عام ١٩٥٨',
-            // image: './path/to/image/source.png',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/allTheMenInBasra.png',
             description: 'تلتقي رحلات الرجال الثلاثة في حرارة شهر أغسطس عام ١٩٥٨ في البصرة، بعد عشر سنوات من النكبة. يحاولون لايجاد على مهرب لنقلهم عبر الحدود إلى الكويت. توصلوا إلى اتفاق مع رجل اسمه أبو الخيزران الذي يوافق على لأخذهم إلى الكويت داخل شاحنته<br><br><span style="color: #D93D5C">انقر على الرموز لمعرفة اكثر<\span>',
             location: {
                 center: [41.22126, 31.54914],
@@ -303,6 +303,12 @@ var config = {
                 id: "M3",
                 text: 'يصل مروان إلى البصرة، ويفشل في الاتفاق مع مهرب غاضب. يعرض رجل اسمه أبو الخيزيران المساعدة. مروان في فندق الشط حيث يلتقي باسعد<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/MarwanBasra.png" style="width: 200px; height: auto;">',
                 },
+                {origin: [47.80551, 30.53819], //basra
+                color: "#3D8DD9",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "AB1",
+                text:'أبو الخيزران<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AbulKeizuran.png" style="width: 200px; height: auto;">',
+                },
             ],
             
             mapAnimation: 'flyTo',
@@ -314,23 +320,23 @@ var config = {
         {
             id: 'chapter-7',
             alignment: 'left',
-            hidden: true,
-            title: 'Third Title',
-            // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            hidden: false,
+            title: 'من البصرة إلى صفوان',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/FirstStop.png',
+            description: 'يقود الرجال السيارة حتى السيارة قريبة من مكتب الحدود العراقية في صفوان. يدخل أبو قيس وأسعد ومرقان إلى خزان المياه، و يخبرهم أبو خيزران أنه سيفتح الخزان بعد خمسة أو ستة دقائق',
             location: {
                 center: [47.36687, 29.92355],
-                zoom: 7.3,
+                zoom: 9,
                 pitch: 0,
                 bearing: 0
             },
             routes: [
                 {origin: [47.80551, 30.53819], //village near Jaffa
-                destination: [47.71766, 30.12715],
+                destination: [47.71766, 30.16815],
                 color: "#5C8451",
                 icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "S1",
-                text: "Abul Kheizuran takes the three men to Safwa, where they get into the tank for the first time.”"
+                // text: "Abul Kheizuran takes the three men to Safwa, where they get into the tank for the first time.”"
                 }
             ],
             
@@ -343,23 +349,23 @@ var config = {
         {
             id: 'chapter-8',
             alignment: 'left',
-            hidden: true,
-            title: 'Third Title',
-            // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            hidden: false,
+            title: 'مكتب حدود سفوان',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AbuInTheOfficeStop1.png',
+            description: 'أبو الخيزران يتعامل مع الضباط على الحدود العراقية بينما ينتظر الرجال في خزان المياه',
             location: {
                 center: [47.36687, 29.92355],
-                zoom: 7.3,
+                zoom: 9,
                 pitch: 0,
                 bearing: 0
             },
             routes: [
-                {origin: [47.71766, 30.12715], //village near Jaffa
-                destination: [47.70867, 30.10687],
+                {origin: [47.71766, 30.16815], //village near Jaffa
+                destination: [47.71500, 30.12493],
                 color: "#5C8451",
                 icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "S2",
-                text: "Then men get out near a hill hiding Sawfa, prepare to cross into Kuwait.”"
+                // text: "Then men get out near a hill hiding Sawfa, prepare to cross into Kuwait.”"
                 }
             ],
             
@@ -372,23 +378,22 @@ var config = {
         {
             id: 'chapter-9',
             alignment: 'left',
-            hidden: true,
-            title: 'Third Title',
-            // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            hidden: false,
+            title: 'مكتب حدود سفوان إلى ٥٠م خارجه',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/PostBorderStop1.png',
+            description: 'يفتح أبو الخيزران الخزان بعد ست دقائق. الرجال متعبون وضعفاء. مروان يعبر خوفه من وصوله إلى الكويت حيا',
             location: {
                 center: [47.36687, 29.92355],
-                zoom: 7.3,
+                zoom: 9,
                 pitch: 0,
                 bearing: 0
             },
             routes: [
-                {origin: [47.70867, 30.10687], //village near Jaffa
-                destination: [47.63514, 29.57875],
+                {origin: [47.71500, 30.12493], //village near Jaffa
+                destination: [47.71438, 30.10117],
                 color: "#5C8451",
                 icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "S3",
-                text: "Abul Kheizuran is too late, the three men have died by the time they cross into Kuwait near Mutlaa. he takes thier bodies and dumps them outside the city.”"
                 }
             ],
             
@@ -402,8 +407,92 @@ var config = {
             id: 'chapter-10',
             alignment: 'left',
             hidden: false,
+            title: 'قريب من مكتب حدود الكويت',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/preBorder2Shot.png',
+            description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
+            location: {
+                center: [47.36687, 29.92355],
+                zoom: 9,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {origin: [47.71438, 30.10117], //village near Jaffa
+                destination: [47.70148, 30.07836],
+                color: "#5C8451",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S4",
+                }
+            ],
+            
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
+            id: 'chapter-11', //border office two
+            alignment: 'left',
+            hidden: false,
+            title: 'في مكتب الحدود الكويتية',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/borderStop2.png',
+            description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
+            location: {
+                center: [47.36687, 29.92355],
+                zoom: 9,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {origin: [47.70148, 30.07836], //village near Jaffa
+                destination: [47.66433, 30.03867],
+                color: "#5C8451",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S5",
+                }
+            ],
+            
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
+            id: 'chapter-12', //stop 50k from border office
+            alignment: 'left',
+            hidden: false,
+            title: 'على بعد ٥٠م من مكتب الحدود الكويتي',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/postBorder2Stop.png',
+            description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
+            location: {
+                center: [47.36687, 29.92355],
+                zoom: 9,
+                pitch: 0,
+                bearing: 0
+            },
+            routes: [
+                {origin: [47.66433, 30.03867], //village near Jaffa
+                destination: [47.58394, 30.04764],
+                color: "#5C8451",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S4",
+                }
+            ],
+            
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
+            id: 'chapter-14', //dumping bodies step-- adjust locations 
+            alignment: 'left',
+            hidden: false,
             title: 'Third Title',
-            // image: './path/to/image/source.png',
+            image: '/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/FinalDump.png',
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [47.36687, 29.92355],
@@ -412,6 +501,12 @@ var config = {
                 bearing: 0
             },
             routes: [
+                {origin: [47.58394, 30.04764],
+                destination: [47.6000, 29.57875], //final destination 
+                color: "#5C8451",
+                icon: "truck_icon-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                id: "S5",
+                },
                 {origin: [47.45000, 29.57875], //final destination 
                 color: "#5C8451",
                 icon: "dead-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
@@ -438,7 +533,7 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'chapter-11',
+            id: 'chapter-15', //overview map and concluding statement -- write concluding statement 
             alignment: 'left',
             hidden: true,
             title: 'Third Title',

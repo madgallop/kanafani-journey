@@ -425,7 +425,7 @@ function animateRoute(route, point, color, icon, wayID, text) {
   return new Promise(resolve => {
     let counter = 0;
     const lineDistance = turf.length(route);
-    const steps = 150;
+    const steps = 50;
     const arc = [];
 
     for (let i = 0; i < lineDistance; i += lineDistance / steps) {
