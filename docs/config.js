@@ -271,10 +271,10 @@ var config = {
         {
             id: 'chapter-6',
             alignment: 'left',
-            hidden: true,
-            title: 'Third Title',
+            hidden: false,
+            title: 'البصرة عام ١٩٥٨',
             // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            description: 'تلتقي رحلات الرجال الثلاثة في حرارة شهر أغسطس عام ١٩٥٨ في البصرة، بعد عشر سنوات من النكبة. يحاولون لايجاد على مهرب لنقلهم عبر الحدود إلى الكويت. توصلوا إلى اتفاق مع رجل اسمه أبو الخيزران الذي يوافق على لأخذهم إلى الكويت داخل شاحنته<br><br><span style="color: #D93D5C">انقر على الرموز لمعرفة اكثر<\span>',
             location: {
                 center: [41.22126, 31.54914],
                 zoom: 5.8,
@@ -285,7 +285,7 @@ var config = {
                 {origin: [38.93271, 33.43336], //village near Jaffa
                 destination: [47.80551, 30.53819],
                 color: "#3D8DD9",
-                icon: "qais_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
+                icon: "qais_icon-04",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/qais_icon-04.svg",
                 id: "Q3",
                 text: 'وصل أبو قيس شمال البصرة إلى منطقة تسمى شط العرب حيث يلتقي نهرا دجلة والفرات فيشكلان نهرا واحدا. وجد نفسه في بستان من أشجار النخيل بجانب الماء<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/AbuQaisShatAlArab.png" style="width: 200px; height: auto;">',
                 },
@@ -299,7 +299,7 @@ var config = {
                 {origin: [43.60170, 34.64992], //Acre?? 
                 destination: [47.80551, 30.53819],
                 color: "#D99E3D",
-                icon: "marwan_outlined-01",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
+                icon: "marwan_icon-02",//"/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/assad_icon-03.svg",
                 id: "M3",
                 text: 'يصل مروان إلى البصرة، ويفشل في الاتفاق مع مهرب غاضب. يعرض رجل اسمه أبو الخيزيران المساعدة. مروان في فندق الشط حيث يلتقي باسعد<br><br><img src="/Users/madeleinegallop/Desktop/DimaFinalProject/storytelling-main/men-in-the-sun/assets/images/MarwanBasra.png" style="width: 200px; height: auto;">',
                 },
