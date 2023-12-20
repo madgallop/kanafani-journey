@@ -437,7 +437,7 @@ var config = {
             hidden: false,
             title: 'في مكتب الحدود الكويتية',
             image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/borderStop2.png?raw=true',
-            description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
+            description: 'هذه المرة، يقضي أبو خيزران وقت طويل في مكتب الحدود حيث يسأله الرجال هناك عن راقصة يعتقدون أنه كان يراها في البصرة. هذا المشهد متوتر وساخر، حيث أن أبو خيزران عاجزاً جنسياً. يمزح الضباط مع أبو خيزران وهو يحاول المغادرة. يستمر الحدث بأكمله أكثر من عشرين دقيقة.<br><br>في الفيلم، يضرب الرجال الموجودون في خزان المياه جوانبه مع مرور الوقت، ويقاومون حالتهم، لكن في الكتاب يظل الرجال في صمت',
             location: {
                 center: [47.36687, 29.92355],
                 zoom: 9,
@@ -465,7 +465,7 @@ var config = {
             hidden: false,
             title: 'على بعد ٥٠م من مكتب الحدود الكويتي',
             image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/postBorder2Stop.png?raw=true',
-            description: 'مرة أخرى، يجب على الرجال دخول خزان المياه. يقول أبو خيزران إنه سيفتحه هذه المرة بعد سبع دقائق',
+            description: 'يقود أبو خيزران سيارته بسرعة إلى مكان مخفي وينظر بخوف إلى خزان المياه. لا يوجد صوت، فقط الصمت. ويقول اسم اسعد ولكن لا يوجد رد. يدخله، ويعلم أن اسعد ومروان وأبو قيس قد ماتوا',
             location: {
                 center: [47.36687, 29.92355],
                 zoom: 9,
@@ -491,9 +491,9 @@ var config = {
             id: 'chapter-14', //dumping bodies step-- adjust locations 
             alignment: 'left',
             hidden: false,
-            title: 'Third Title',
+            title: 'منطقة القمامة خارج مدينة الكويت',
             image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/images/FinalDump.png?raw=true',
-            description: 'Copy these sections to add to your story.',
+            description: 'يأخذ جثث الرجال إلى منطقة القمامة خارج مدينة الكويت. يترك الجثث هناك بعد أن أخذ أموالهم وساعة مروان. في الكتاب، عنده أبو الخيزران فكرة واحدة فقط، ويكررها عبر الصحراء: <br><br><i><span style="color: #D93D5C">لماذة لم يدقوا جران الخزان؟<\span><\i>',
             location: {
                 center: [47.36687, 29.92355],
                 zoom: 7.3,
