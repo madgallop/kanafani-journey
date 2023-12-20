@@ -101,7 +101,7 @@
             line-height: 25px;
             font-size: 18px;
             text-align: right;
-            color: #D93D5C;
+            color: #93794E;
         }
 
         .step img {
@@ -117,8 +117,9 @@
         .mapboxgl-popup {
             max-width: 400px;
             font-family: 'Arial', sans-serif;
-            color: #D93D5C;
+            color: #777777;
         }
+
 
         .mapboxgl-popup-content {
             text-align: center;
@@ -126,6 +127,11 @@
             background-color: #F9F6F2;
 
         }
+        .mapboxgl-popup-tip {
+            display: none; /* Hide the tip */
+            z-index: 99999;
+        }
+
 
         /* Fix issue on mobile browser where scroll breaks  */
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
