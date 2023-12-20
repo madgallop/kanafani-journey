@@ -10,10 +10,10 @@ var config = {
     theme: 'dark',
     use3dTerrain: false, //set true for enabling 3D maps.
     auto: false,
-    title: 'رحلات رجال في الشمس',
-    subtitle: 'Memory, dreams, and reality',
-    byline: 'Madeleine Gallop',
-    footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
+    title: 'عبر الحدود',
+    subtitle: 'رجال في الشمس على الخريطة',
+    byline: 'مادلين',
+    // footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
             id: 'chapter-1',
@@ -21,7 +21,7 @@ var config = {
             // hidden: false,
             // title: 'Introduction and ',
             image: 'https://github.com/madgallop/kanafani-journey/blob/main/assets/meninthesuncover-01.jpg?raw=true',
-            description: 'Three Palestinian men take journeys hoping to reach Kuwait....',
+            description: 'تستكشف الخريطة التالية رحلات الرجال في رواية "رجال في الشمس" التي كتبها غسان كنفاني عام ١٩٦٣ و فيلم "المخدوعون." تركز الخريطة على تجارب ثلاثة رجال فلسطينيين - أبو قيس واسعد ومروان - إنهم يتنقلون بين تحديات نكبة عام ١٩٤٨ عبر مخيمات اللاجئين والرحلات الصعبة إلى الحدود الكويتية. تعكس قصصهم الأمل واليأس وتصور الحقائق ظالمة التي تواجهها أجيال من الفلسطينيين',
             location: {
                 center: [40.24918, 31.47661],
                 zoom: 5.68,
